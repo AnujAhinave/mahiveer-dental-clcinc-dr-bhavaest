@@ -3,248 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Doctors | Mahavir Dental Care Thane</title>
+    <title>Dr. J.K. Maniar | HIV & Infectious Disease Specialist Mumbai</title>
     
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
-        
         html { scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
-        
         .luxury-font { font-family: 'Playfair Display', serif; }
         
-        :root {
-            --bg-light: #F9F9F9;
-            --text-main: #1a365d;
-            --accent-brand: #48BDBB; 
+        :root { 
+            --bg-light: #F9F9F9; 
+            --text-main: #0f172a; 
+            --accent-brand: #1e40af; 
+            --dark-panel: #0f172a; 
         }
-
-        body { background-color: var(--bg-light); color: var(--text-main); }
-
-        .gradient-text { background: linear-gradient(90deg, #48BDBB, #36a5a3); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Subtle Background Pattern */
-        .bg-pattern { 
-            background-color: #ffffff;
-            background-image: radial-gradient(#48BDBB 0.5px, transparent 0.5px);
-            background-size: 20px 20px;
-            opacity: 0.05;
+        body { background-color: var(--bg-light); color: var(--text-main); }
+        
+        .unified-hero-bg { 
+            background: linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.95)), 
+            url('https://www.jaslokhospital.net/uploads/images/staff/b04be67c6439eb94b046ec242c7cea5a.jpg'); 
+            background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;
         }
-
-        .hover-scale { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-        .hover-scale:hover { transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); border-color: var(--accent-brand); }
-
-        /* Custom Logo Sizing */
-        .zoom-centre-logo { overflow: hidden; background-color: white; border: 1px solid #eee; }
-        .zoom-centre-logo img {
-            object-fit: contain; 
-            object-position: center;
-            transform: scale(1.5); 
-            width: 100%; height: 100%;
-        }
-
-        /* Mobile Menu Fix */
-        #mobile-menu { 
-            display: none; 
-        }
-        #mobile-menu.active { 
-            display: block !important; 
-        }
+        
+        .trust-card { background: white; border: 1px solid #e2e8f0; transition: all 0.3s ease; }
+        .trust-card:hover { border-color: var(--accent-brand); transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1); }
+        
+        #mobile-menu { display: none; transform-origin: top right; transition: all 0.2s ease-out; opacity: 0; transform: scale(0.95) translateY(-10px); }
+        #mobile-menu.active { display: block !important; opacity: 1; transform: scale(1) translateY(0); }
+        
+        .zoom-centre-logo { overflow: hidden; background-color: white; border: 4px solid white; box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .zoom-centre-logo img { object-fit: cover; object-position: center 20%; width: 100%; height: 100%; }
+        
+        .section-title { font-weight: 800; text-transform: uppercase; letter-spacing: -0.02em; color: #1e293b; }
     </style>
 </head>
 <body class="antialiased">
 
-    <nav class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
-        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between relative">
-            <div class="flex items-center gap-3">
-                <a href="index.html" class="flex items-center gap-4">
-                    <div class="w-10 h-10 rounded-full zoom-centre-logo shadow-sm">
-                        <img src="https://github.com/AnujAhinave/mahiveer-dental-clcinc-dr-bhavaest/blob/main/ChatGPT%20Image%20Mar%2031%2C%202026%2C%2004_42_48%20PM.png?raw=true" alt="Mahavir Dental Care Logo">
-                    </div>
-                    <div class="flex flex-col">
-                        <span class="font-extrabold text-xl tracking-tight uppercase text-gray-900 leading-none">
-                            Mahavir <span class="text-[#48BDBB]">Dental Care</span>
-                        </span>
-                        <span class="text-[9px] font-bold tracking-[0.3em] text-gray-400 uppercase mt-1">Thane, Maharashtra</span>
-                    </div>
-                </a>
-            </div>
+<div class="bg-slate-900 text-white text-[10px] uppercase tracking-[0.2em] py-2 text-center font-bold">
+    <i class="fas fa-shield-halved text-blue-400 mr-2"></i> 100% Private & Confidential Consultation Standards
+</div>
 
-            <div class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-500">
-                <a href="index.html" class="hover:text-[#48BDBB] transition-colors">Home</a>
-                <a href="#" class="text-[#48BDBB] border-b-2 border-[#48BDBB] pb-1">Our Doctors</a>
-                <a href="treatments.html" class="hover:text-[#48BDBB] transition-colors">Services</a>
-                <a href="results.html" class="hover:text-[#48BDBB] transition-colors">Reviews</a>
+<nav class="bg-white/95 backdrop-blur-md border-b border-gray-100 sticky top-0 z-50 shadow-sm">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between relative">
+        <a href="index.html" class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full zoom-centre-logo shadow-sm">
+                <img src="https://www.jaslokhospital.net/uploads/images/staff/b04be67c6439eb94b046ec242c7cea5a.jpg" alt="Dr J.K. Maniar">
             </div>
-
-            <div class="flex items-center gap-4">
-                <a href="tel:08898789980" class="hidden sm:flex items-center gap-2 border-2 border-[#1a365d] text-[#1a365d] px-6 py-2 rounded-md font-bold hover:bg-gray-50 transition text-xs uppercase tracking-widest">
-                    <i class="fas fa-phone-alt"></i> Call
-                </a>
-                <a href="index.html#booking" class="bg-[#1e293b] text-white px-7 py-2.5 rounded-md font-bold hover:bg-[#48BDBB] shadow-lg text-xs transition-all text-center uppercase tracking-widest hidden md:block">
-                    Book Visit
-                </a>
-                <button id="menu-btn" class="lg:hidden text-gray-900 focus:outline-none p-2 bg-gray-50 rounded-md">
-                    <i class="fas fa-bars text-xl" id="menu-icon"></i>
-                </button>
+            <div class="flex flex-col">
+                <span class="font-extrabold text-xl tracking-tight uppercase text-gray-900 leading-none">
+                    Dr. J.K. <span class="text-[#1e40af]">Maniar</span>
+                </span>
+                <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase mt-1">Specialist Physician</span>
             </div>
+        </a>
 
-            <div id="mobile-menu" class="absolute top-20 right-6 w-48 bg-white border border-gray-100 rounded-xl shadow-2xl p-2 z-[60]">
-                <div class="flex flex-col text-[11px] font-bold uppercase tracking-widest text-gray-600">
-                    <a href="index.html" class="hover:bg-gray-50 text-gray-600 p-3 rounded-lg flex items-center gap-3">
-                        <i class="fas fa-home w-4"></i> Home
-                    </a>
-                    <a href="about.html" class="hover:bg-gray-50 text-[#48BDBB] p-3 rounded-lg flex items-center gap-3">
-                        <i class="fas fa-user-md w-4"></i> Doctors
-                    </a>
-                    <a href="treatments.html" class="hover:bg-gray-50 hover:text-[#48BDBB] p-3 rounded-lg flex items-center gap-3">
-                        <i class="fas fa-list w-4"></i> Services
-                    </a>
-                    <a href="results.html" class="hover:bg-gray-50 hover:text-[#48BDBB] p-3 rounded-lg flex items-center gap-3">
-                        <i class="fas fa-star w-4"></i> Stories
-                    </a>
-                    <div class="h-[1px] bg-gray-100 my-1"></div>
-                    <a href="index.html#booking" class="text-[#48BDBB] p-3 flex items-center gap-3">
-                        <i class="fas fa-calendar-check w-4"></i> Book Now
-                    </a>
-                </div>
+        <div class="hidden lg:flex items-center gap-8 text-[11px] font-bold uppercase tracking-widest text-gray-500">
+            <a href="index.html" class="hover:text-[#1e40af] transition-colors">Home</a>
+            <a href="about.html" class="hover:text-[#1e40af] transition-colors">About Doctor</a>
+            <a href="treatments.html" class="hover:text-[#1e40af] transition-colors">Expertise</a>
+            <a href="results.html" class="hover:text-[#1e40af] transition-colors">Smile Stories</a>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <a href="index.html#booking" class="bg-[#1e293b] text-white px-6 py-2.5 rounded-md font-bold hover:bg-[#1e40af] transition-colors text-xs uppercase tracking-widest shadow-lg">Book Visit</a>
+            <button id="menu-btn" class="lg:hidden text-gray-900 focus:outline-none p-2 bg-gray-50 rounded-md">
+                <i class="fas fa-bars text-xl" id="menu-icon"></i>
+            </button>
+        </div>
+        
+        <div id="mobile-menu" class="absolute top-20 right-6 w-48 bg-white border border-gray-100 rounded-xl shadow-2xl p-2 z-[60]">
+            <div class="flex flex-col text-[11px] font-bold uppercase tracking-widest text-gray-600">
+                <a href="index.html" class="hover:bg-gray-50 text-[#1e40af] p-3 rounded-lg flex items-center gap-3"><i class="fas fa-home w-4"></i> Home</a>
+                <a href="about.html" class="hover:bg-gray-50 hover:text-[#1e40af] p-3 rounded-lg flex items-center gap-3"><i class="fas fa-user-md w-4"></i> About</a>
+                <a href="treatments.html" class="hover:bg-gray-50 hover:text-[#1e40af] p-3 rounded-lg flex items-center gap-3"><i class="fas fa-stethoscope w-4"></i> Expertise</a>
+                <a href="results.html" class="hover:bg-gray-50 hover:text-[#1e40af] p-3 rounded-lg flex items-center gap-3"><i class="fas fa-star w-4"></i> Stories</a>
+                <div class="h-[1px] bg-gray-100 my-1"></div>
+                <a href="index.html#booking" class="text-[#1e40af] p-3 flex items-center gap-3"><i class="fas fa-calendar-check w-4"></i> Book Now</a>
             </div>
         </div>
-    </nav>
+    </div>
+</nav>
 
-    <section class="py-20 bg-white relative overflow-hidden border-b border-gray-100">
-        <div class="absolute inset-0 bg-pattern"></div>
-        <div class="max-w-6xl mx-auto px-6 relative flex flex-col md:flex-row items-center gap-16">
-            
-            <div class="md:w-1/2">
-                <div class="relative inline-block w-full max-w-md mx-auto">
-                    <img src="https://raw.githubusercontent.com/AnujAhinave/mahiveer-dental-clcinc-dr-bhavaest/main/resized_170.82%20KB.jpeg" 
-                         class="rounded-3xl shadow-2xl border-8 border-white relative z-10 w-full h-[500px] object-cover" alt="Dr. Bhavesh Jain at Mahavir Dental Care">
-                    
-                    <div class="absolute -bottom-6 -right-6 md:-right-10 bg-[#1e293b] text-white p-8 rounded-2xl shadow-xl z-20 border border-gray-800">
-                        <div class="flex items-center gap-4">
-                            <i class="fas fa-certificate text-[#48BDBB] text-4xl"></i>
-                            <div>
-                                <p class="text-3xl font-extrabold">5.0/5</p>
-                                <p class="text-[10px] uppercase font-bold tracking-[0.2em] text-gray-400">Google Verified Rating</p>
-                            </div>
-                        </div>
-                    </div>
+<header id="about" class="unified-hero-bg border-b border-gray-100 pt-20 pb-28 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-6 text-center lg:text-left">
+        <div class="flex flex-col lg:flex-row items-center justify-between gap-16">
+            <div class="w-full lg:w-3/5 order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 mb-6">
+                    <span class="text-gray-600 font-bold tracking-widest text-[10px] uppercase">A Legacy of Trust: 50+ Years</span>
                 </div>
-            </div>
-
-            <div class="md:w-1/2 text-center md:text-left">
-                <span class="text-[#48BDBB] font-bold uppercase tracking-widest text-xs">B.D.S. Dental Surgeon & Specialist</span>
-                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mt-4 leading-tight tracking-tight luxury-font">
-                    Dr. <span class="gradient-text italic">Bhavesh Jain</span>
+                <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight tracking-tight mb-6 uppercase">
+                    Ethical & Expert <br><span class="text-[#1e40af]">Specialist Care</span>
                 </h1>
-                
-                <p class="text-lg text-gray-600 mt-8 leading-relaxed font-light">
-                    As the lead dental surgeon at Mahavir Dental Care in Thane, Dr. Bhavesh Jain provides exceptionally knowledgeable and patient-friendly oral healthcare. He is highly disciplined in his work, ensuring every procedure is explained in detail to make patients feel completely comfortable.
+                <p class="text-gray-600 text-lg font-light mb-10 leading-relaxed max-w-xl">
+                    If you are dealing with HIV or a complex infection, Dr. J.K. Maniar provides calm, accurate, and private medical care focused on clarity and confidence.
                 </p>
-                <p class="text-lg text-gray-600 mt-4 leading-relaxed font-light">
-                    Specializing in precision root canal treatments, composite fillings, and painless wisdom tooth removal, Dr. Bhavesh focuses on providing high-quality dental services. His clinic is known for its hygienic environment and professional follow-up care, ensuring a smooth and reliable recovery for every patient.
-                </p>
-
-                <div class="grid grid-cols-3 gap-4 mt-10 border-t border-gray-200 pt-8">
-                    <div>
-                        <h4 class="text-3xl font-extrabold text-gray-900">130+</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Verified Reviews</p>
-                    </div>
-                    <div>
-                        <h4 class="text-3xl font-extrabold text-gray-900">Expert</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">RCT Specialist</p>
-                    </div>
-                    <div>
-                        <h4 class="text-3xl font-extrabold text-[#48BDBB]">100%</h4>
-                        <p class="text-[10px] text-gray-500 uppercase tracking-widest font-bold mt-1">Painless Goal</p>
-                    </div>
+                <a href="#booking" class="inline-block bg-[#1e293b] text-white px-8 py-4 rounded-md font-bold hover:bg-[#1e40af] transition uppercase text-xs tracking-widest">Book Confidential Visit</a>
+            </div>
+            <div class="w-full lg:w-2/5 flex flex-col items-center order-1 lg:order-2">
+                <div class="relative w-56 h-56 md:w-72 md:h-72 mb-6 zoom-centre-logo rounded-full ring-8 ring-blue-50">
+                    <img src="https://www.jaslokhospital.net/uploads/images/staff/b04be67c6439eb94b046ec242c7cea5a.jpg" alt="Dr. J.K. Maniar">
+                </div>
+                <div class="text-center">
+                    <h2 class="text-2xl font-extrabold text-gray-900 uppercase tracking-tighter">Dr. J.K. Maniar</h2>
+                    <p class="text-[10px] text-[#1e40af] uppercase font-bold tracking-widest mt-2">Chief Physician: National HIV Guidelines</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</header>
 
-    <section class="py-24 bg-[#F9F9F9]">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl font-extrabold text-gray-900 uppercase tracking-tight luxury-font">Our Clinical Standards</h2>
-                <p class="text-gray-500 mt-2 text-sm">Experience international quality oral healthcare</p>
+<section class="py-16 bg-white border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-4xl font-black text-[#1e40af]">50+</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">Years of Care</p>
             </div>
+            <div>
+                <p class="text-4xl font-black text-[#1e40af]">12+</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">Global Honors</p>
+            </div>
+            <div>
+                <p class="text-4xl font-black text-[#1e40af]">30+</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">Publications</p>
+            </div>
+            <div>
+                <p class="text-4xl font-black text-[#1e40af]">1768+</p>
+                <p class="text-[10px] font-bold uppercase tracking-widest text-slate-400 mt-2">Patients treated</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover-scale flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-gray-50 text-[#48BDBB] rounded-full flex items-center justify-center text-2xl mb-6 shadow-inner border border-gray-100">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4 uppercase tracking-tight">Digital Precision</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Utilizing digital X-rays and intraoral imaging to ensure every diagnosis is pinpoint accurate, minimizing invasive procedures.</p>
+<section id="expertise" class="py-24 bg-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-6 text-center mb-16">
+        <span class="text-[#1e40af] font-bold text-xs uppercase tracking-[0.3em]">Turning Uncertainty into Clarity</span>
+        <h2 class="text-4xl font-extrabold mt-4 text-slate-900 uppercase">Specialized HIV & ID Care</h2>
+    </div>
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+        <div class="trust-card p-10 rounded-[2.5rem] text-left">
+            <div class="w-16 h-16 bg-blue-50 text-[#1e40af] rounded-2xl flex items-center justify-center text-2xl mb-8"><i class="fas fa-dna"></i></div>
+            <h3 class="text-xl font-bold mb-4 text-slate-800">ART Sequencing</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Adjusting medication plans for better control when current treatments are not yielding expected results.</p>
+        </div>
+        <div class="trust-card p-10 rounded-[2.5rem] text-left">
+            <div class="w-16 h-16 bg-blue-50 text-[#1e40af] rounded-2xl flex items-center justify-center text-2xl mb-8"><i class="fas fa-hand-holding-heart"></i></div>
+            <h3 class="text-xl font-bold mb-4 text-slate-800">Discordant Couples</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Guidance on maintaining safe relationships and family planning for couples with mixed HIV status.</p>
+        </div>
+        <div class="trust-card p-10 rounded-[2.5rem] text-left">
+            <div class="w-16 h-16 bg-blue-50 text-[#1e40af] rounded-2xl flex items-center justify-center text-2xl mb-8"><i class="fas fa-user-shield"></i></div>
+            <h3 class="text-xl font-bold mb-4 text-slate-800">Adolescent Care</h3>
+            <p class="text-slate-500 text-sm leading-relaxed">Sensitive medical and emotional support helping young patients live normal, confident lives.</p>
+        </div>
+    </div>
+</section>
+
+<section id="consult" class="py-24 bg-slate-900 text-white rounded-[4rem] mx-4 md:mx-10 my-10 relative overflow-hidden scroll-mt-20">
+    <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
+        <h2 class="text-3xl md:text-5xl font-extrabold mb-12 uppercase tracking-tight">When Should You Seek Advice?</h2>
+        <div class="space-y-6 text-slate-300 text-lg md:text-xl font-medium">
+            <p class="flex items-center justify-center gap-4"><i class="fas fa-check-circle text-blue-400"></i> You’ve recently been diagnosed and need clarity</p>
+            <p class="flex items-center justify-center gap-4"><i class="fas fa-check-circle text-blue-400"></i> Your current treatment is not giving expected results</p>
+            <p class="flex items-center justify-center gap-4"><i class="fas fa-check-circle text-blue-400"></i> You want a second opinion before making a decision</p>
+            <p class="flex items-center justify-center gap-4"><i class="fas fa-check-circle text-blue-400"></i> You prefer a completely private and experienced consultation</p>
+        </div>
+    </div>
+</section>
+
+<section id="academic" class="py-24 bg-white scroll-mt-20">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <span class="text-[#1e40af] font-bold text-xs uppercase tracking-[0.3em]">Evidence-Based Excellence</span>
+            <h2 class="text-4xl md:text-5xl font-extrabold mt-4 text-slate-900 uppercase">Credentials & Honors</h2>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8 items-start">
+            <div class="lg:col-span-1 bg-[#1e40af] text-white p-10 rounded-[3rem] shadow-2xl">
+                <h3 class="text-2xl font-bold mb-6 uppercase">Awards</h3>
+                <ul class="space-y-4 opacity-90 text-sm font-medium">
+                    <li><i class="fas fa-award mr-2 text-blue-200"></i> Lifetime Achievement Award</li>
+                    <li><i class="fas fa-award mr-2 text-blue-200"></i> Pioneering Work in HIV/AIDS</li>
+                    <li><i class="fas fa-award mr-2 text-blue-200"></i> 12+ Major Global Honors</li>
+                </ul>
+            </div>
+            <div class="lg:col-span-2 grid md:grid-cols-2 gap-8">
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100">
+                    <h4 class="text-[#1e40af] font-black text-xs uppercase mb-4">Lead Architect</h4>
+                    <p class="text-slate-800 font-bold text-lg leading-tight">National HIV Guidelines (NACO)</p>
+                    <p class="text-slate-500 text-xs mt-2">Authored clinical standards for the Ministry of Health, India.</p>
                 </div>
-
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover-scale flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-gray-50 text-[#48BDBB] rounded-full flex items-center justify-center text-2xl mb-6 shadow-inner border border-gray-100">
-                        <i class="fas fa-pump-medical"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4 uppercase tracking-tight">Advanced Sterilization</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Your safety is paramount. We follow rigid 4-step sterilization protocols using Class B Autoclave systems for every instrument.</p>
-                </div>
-
-                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 hover-scale flex flex-col items-center text-center">
-                    <div class="w-16 h-16 bg-gray-50 text-[#48BDBB] rounded-full flex items-center justify-center text-2xl mb-6 shadow-inner border border-gray-100">
-                        <i class="fas fa-heart"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-900 mb-4 uppercase tracking-tight">Painless Dentistry</h3>
-                    <p class="text-gray-500 text-sm leading-relaxed">Equipped with specialized techniques to manage dental anxiety, ensuring a calm, painless experience even for complex RCTs.</p>
+                <div class="bg-slate-50 p-8 rounded-[2.5rem] border border-slate-100">
+                    <h4 class="text-[#1e40af] font-black text-xs uppercase mb-4">Global Faculty</h4>
+                    <p class="text-slate-800 font-bold text-lg leading-tight">Visiting Professor - UTMB Texas, USA</p>
+                    <p class="text-slate-500 text-xs mt-2">Recognized internationally for academic contributions.</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <section class="py-24 bg-[#0f172a] text-white text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?auto=format&fit=crop&q=80&w=1200')] opacity-[0.03] bg-cover bg-center"></div>
-        <div class="max-w-4xl mx-auto px-6 relative z-10">
-            <h2 class="text-4xl md:text-5xl font-extrabold mb-8 uppercase tracking-tight leading-tight luxury-font">
-                Ready for Your <br><span class="text-[#48BDBB] italic">Transformation?</span>
-            </h2>
-            <p class="text-gray-400 mb-10">Experience the difference of expert dental care at Mahavir Dental Care, Thane.</p>
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="index.html#booking" class="bg-[#48BDBB] text-white px-12 py-4 rounded-md font-bold hover:bg-white hover:text-black transition-colors uppercase text-sm tracking-widest shadow-lg">
-                    Book Your Visit
-                </a>
-                <a href="https://wa.me/918898789980" target="_blank" class="border-2 border-white/20 text-white px-12 py-4 rounded-md font-bold hover:bg-white/10 transition-colors uppercase text-sm tracking-widest flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-                </a>
+<section id="booking" class="py-24 bg-[#0f172a] scroll-mt-20">
+    <div class="max-w-3xl mx-auto px-6">
+        <div class="bg-[#1e293b] rounded-2xl border border-white/10 p-10 shadow-2xl">
+            <h3 class="text-3xl font-extrabold text-white text-center uppercase mb-10 tracking-tight">
+                Request <span class="text-[#1e40af]">Consultation</span>
+            </h3>
+            <form id="clinic-booking-form" class="grid grid-cols-1 gap-6">
+                <input type="text" placeholder="PATIENT NAME / INITIALS" required 
+                       class="w-full bg-[#334155] border border-transparent rounded-lg px-6 py-4 text-white focus:border-[#1e40af] outline-none transition uppercase text-[10px] font-bold tracking-widest placeholder:text-gray-400">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="tel" placeholder="MOBILE NUMBER" required 
+                           class="w-full bg-[#334155] border border-transparent rounded-lg px-6 py-4 text-white focus:border-[#1e40af] outline-none transition uppercase text-[10px] font-bold tracking-widest placeholder:text-gray-400">
+                    <select required class="w-full bg-[#334155] text-gray-400 rounded-lg px-6 py-4 outline-none uppercase text-[10px] font-bold tracking-widest border border-transparent focus:border-[#1e40af]">
+                        <option value="">SELECT CONCERN</option>
+                        <option>Recently Diagnosed</option>
+                        <option>Treatment Resistance</option>
+                        <option>Discordant Couple Guidance</option>
+                    </select>
+                </div>
+                <button type="submit" class="w-full bg-[#1e40af] text-white font-bold py-5 rounded-lg hover:bg-white hover:text-black transition-all uppercase mt-4 tracking-widest text-xs">
+                    Confirm Private Visit
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+<section id="reviews" class="py-24 bg-[#F9F9F9] border-y border-gray-100 scroll-mt-20">
+    <div class="max-w-6xl mx-auto px-6 mb-10 text-center">
+        <h2 class="text-3xl md:text-4xl section-title text-gray-900">Patiesnts thoughts</h2>
+        <p class="text-gray-500 mt-3 text-sm">Trusted by thousands for ethical and transparent medical care</p>
+    </div>
+    
+    
+    
+    <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="p-8 text-center bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col justify-center hover-scale">
+            <div class="flex justify-center text-[#1e40af] mb-3 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="text-gray-600 text-sm italic mb-4">"Dr. Maniar's approach is incredibly calm and professional. He explained my treatment options with absolute clarity during a difficult time."</p>
+            <h4 class="font-bold text-xs uppercase tracking-widest text-gray-900">— Verified Patient</h4>
+        </div>
+        <div class="p-8 text-center bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col justify-center hover-scale">
+            <div class="flex justify-center text-[#1e40af] mb-3 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="text-gray-600 text-sm italic mb-4">"Finding a doctor who respects privacy and has this much experience is rare. He is truly a pioneer in HIV medicine in India."</p>
+            <h4 class="font-bold text-xs uppercase tracking-widest text-gray-900">— Case Review Patient</h4>
+        </div>
+        <div class="p-8 text-center bg-white rounded-xl shadow-sm border border-gray-100 flex flex-col justify-center hover-scale">
+            <div class="flex justify-center text-[#1e40af] mb-3 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+            <p class="text-gray-600 text-sm italic mb-4">"Excellent experience with discordant couple counseling. We now have a clear path forward for our family planning."</p>
+            <h4 class="font-bold text-xs uppercase tracking-widest text-gray-900">— Counseling Visit</h4>
+            
+        </div>
+        
+    </div>
+    </section>
+      
+<footer class="bg-[#050505] text-gray-400 py-16 border-t border-white/5">
+    <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-12 text-center md:text-left">
+        <div>
+            <h3 class="font-bold text-lg mb-4 text-white uppercase tracking-tight">Dr. J.K. Maniar</h3>
+            <p class="text-sm leading-relaxed mb-4">Grant Road Clinic, Near Station, Grant Road (East), Mumbai, Maharashtra 400007</p>
+            <a href="mailto:consult@drmaniar.com" class="text-lg font-bold text-white hover:text-[#1e40af] transition underline decoration-blue-500">consult@drmaniar.com</a>
+        </div>
+        <div>
+            <h3 class="font-bold text-sm mb-4 uppercase tracking-widest text-white">Clinic Hours</h3>
+            <p class="text-sm mb-1">Morning: 10 AM - 02 PM</p>
+            <p class="text-sm mb-1">Evening: 05 PM - 09 PM</p>
+            <p class="text-[#1e40af] font-bold text-xs uppercase tracking-widest mt-2">Closed on Sundays</p>
+        </div>
+        <div>
+            <h3 class="font-bold text-sm mb-4 uppercase tracking-widest text-white">Confidentiality</h3>
+            <p class="text-xs leading-relaxed">All consultations follow strict national clinical standards for privacy and data protection.</p>
+            <div class="flex justify-center md:justify-start gap-6 text-xl mt-4">
+                <i class="fas fa-lock text-blue-500"></i>
+                <i class="fas fa-user-shield text-blue-500"></i>
+                <i class="fas fa-file-medical text-blue-500"></i>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="max-w-6xl mx-auto px-6 mt-16 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p class="text-[9px] uppercase tracking-[0.2em]">© 2026 DR. J.K. MANIAR. ALL RIGHTS RESERVED.</p>
+        <p class="text-[9px] uppercase tracking-[0.2em]">DESIGNED BY <span class="text-blue-500">COLDVERT</span></p>
+    </div>
+</footer>
 
-    <footer class="bg-black text-gray-400 py-12 border-t border-white/10 text-center">
-        <span class="font-extrabold text-lg tracking-tighter uppercase text-white luxury-font">Mahavir <span class="text-[#48BDBB] italic">Dental Care</span></span>
-        <p class="text-gray-500 text-[10px] uppercase tracking-[0.3em] mt-3">© 2026 Mahavir Dental Care | Thane West, Maharashtra</p>
-    </footer>
+<script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    menuBtn?.addEventListener('click', () => {
+        mobileMenu?.classList.toggle('active');
+    });
+</script>
 
-    <script>
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const menuIcon = document.getElementById('menu-icon');
-
-        menuBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            mobileMenu.classList.toggle('active');
-            if (mobileMenu.classList.contains('active')) {
-                menuIcon.classList.replace('fa-bars', 'fa-times');
-            } else {
-                menuIcon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
-                mobileMenu.classList.remove('active');
-                menuIcon.classList.replace('fa-times', 'fa-bars');
-            }
-        });
-    </script>
 </body>
 </html>
