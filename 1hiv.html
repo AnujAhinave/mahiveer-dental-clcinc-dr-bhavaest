@@ -20,9 +20,49 @@
         /* Expandable accordion */
         .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.5s ease, opacity 0.4s ease; opacity: 0; }
         .accordion-content.open { max-height: 2000px; opacity: 1; }
-        .accordion-toggle { cursor: pointer; }
-        .accordion-toggle .icon { transition: transform 0.3s ease; }
-        .accordion-toggle.open .icon { transform: rotate(45deg); }
+
+        /* Accordion trigger button */
+        .accordion-trigger {
+            cursor: pointer;
+            user-select: none;
+        }
+        .accordion-trigger .icon-plus {
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+        .accordion-trigger.open .icon-plus {
+            transform: rotate(45deg);
+        }
+        .accordion-trigger:hover .trigger-bar {
+            filter: brightness(0.96);
+        }
+
+        /* "Click to expand" badge */
+        .expand-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.6rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            background: var(--teal);
+            color: white;
+            border-radius: 999px;
+            padding: 0.2rem 0.65rem;
+            margin-left: 0.75rem;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+        .accordion-trigger.open .expand-badge {
+            background: #64748b;
+        }
+        .expand-badge-red {
+            background: #ef4444;
+        }
+        .accordion-trigger.open .expand-badge-red {
+            background: #64748b;
+        }
 
         /* Pain point cards */
         .pain-card { border-left: 3px solid #0d9488; background: #f8fafc; padding: 1.25rem 1.5rem; border-radius: 0 0.5rem 0.5rem 0; }
@@ -53,16 +93,39 @@
         </a>
     </div>
 
-    <nav class="p-4 md:p-6 flex justify-between items-center max-w-7xl mx-auto">
-        <div class="text-xl md:text-2xl font-bold tracking-tighter text-slate-900">DR. <span class="text-teal-600">MANAIR</span></div>
-        <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest">
-            <a href="index.html#science" class="hover:text-teal-600 transition">The Science</a>
-            <a href="index.html#solutions" class="hover:text-teal-600 transition text-teal-600">Life Solutions</a>
-            <a href="index.html#community" class="hover:text-teal-600 transition">Community</a>
-            <a href="index.html#contact" class="bg-teal-600 text-white px-5 py-2 rounded-md hover:bg-teal-700 transition">Consult Privately</a>
+   <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 shadow-sm p-4 md:p-6">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+        <div class="text-xl md:text-2xl font-bold tracking-tighter text-slate-900">
+            DR. <span class="text-teal-600">MANAIR</span>
         </div>
-    </nav>
+        
+        <div class="hidden md:flex space-x-8 font-medium text-sm uppercase tracking-widest items-center">
+            <a href="#" class="text-slate-700 hover:text-teal-600 transition">The Science</a>
+            <a href="#solutions" class="text-slate-700 hover:text-teal-600 transition">Life Solutions</a>
+            <a href="#" class="text-slate-700 hover:text-teal-600 transition">Community</a>
+            <a href="#" class="bg-teal-600 text-white px-5 py-2 rounded-md hover:bg-teal-700 transition shadow-sm">
+                Consult Privately
+            </a>
+        </div>
 
+        <label for="menu-btn" class="md:hidden cursor-pointer text-slate-900 text-2xl p-2 flex items-center">
+            <i class="fas fa-bars" id="menu-icon"></i>
+        </label>
+    </div>
+
+    <input type="checkbox" id="menu-btn" class="hidden peer">
+
+    <div class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out peer-checked:max-h-[400px] md:hidden">
+        <div class="flex flex-col space-y-4 pt-4 pb-6 font-medium text-sm uppercase tracking-widest text-slate-700">
+            <a href="#" class="hover:text-teal-600 transition border-b border-slate-100 pb-2">The Science</a>
+            <a href="#solutions" class="hover:text-teal-600 transition border-b border-slate-100 pb-2">Life Solutions</a>
+            <a href="#" class="hover:text-teal-600 transition border-b border-slate-100 pb-2">Community</a>
+            <a href="#" class="bg-teal-600 text-white px-5 py-3 rounded-md text-center shadow-md">
+                Consult Privately
+            </a>
+        </div>
+    </div>
+</nav>
     <header class="gradient-bg text-white py-16 md:py-24 px-6">
         <div class="max-w-5xl mx-auto text-center">
             <span class="text-teal-400 font-bold uppercase tracking-[0.3em] text-[10px] mb-4 block">Section: Clinical Protocol</span>
@@ -90,41 +153,70 @@
 
     <main class="max-w-6xl mx-auto px-6 md:px-8 py-24">
         
-        <!-- FOUNDATIONAL SCIENCE -->
-        <div class="grid md:grid-cols-12 gap-16 mb-40 relative">
-            <div class="absolute -left-20 -top-10 serif-ghost hidden lg:block select-none">01</div>
-            <div class="md:col-span-5 sticky top-10 h-fit">
-                <span class="section-tag mb-2 block">Foundational Science</span>
-                <h2 class="text-3xl font-bold text-slate-900 mb-6 uppercase tracking-tighter">What is HIV, Really?</h2>
-                <div class="space-y-4 text-sm font-bold uppercase tracking-wide">
-                    <p class="flex items-center text-teal-700"><i class="fas fa-check-circle mr-3"></i> Targeted Suppression</p>
-                    <p class="flex items-center text-teal-700"><i class="fas fa-check-circle mr-3"></i> CD4 Fortress Rebuilding</p>
-                    <p class="flex items-center text-teal-700"><i class="fas fa-check-circle mr-3"></i> Total Organ Protection</p>
-                </div>
-            </div>
-            <div class="md:col-span-7 clinical-border">
-                <p class="text-xl text-slate-800 leading-relaxed mb-8 italic font-serif">
-                    "Without medication, HIV converts your own cells into viral factories. ART acts as a high-precision biological lock, halting this process and allowing your immune soldiers to rebuild."
-                </p>
-                <p class="text-slate-500 mb-6">
-                    Dr. Manair utilizes the latest combination therapies to ensure the virus is suppressed to <strong>Undetectable</strong> levels. Once achieved, the risk of sexual transmission is statistically zero (U=U).
-                </p>
-                <div class="bg-teal-50 border border-teal-100 rounded-xl p-6">
-                    <p class="text-xs font-bold uppercase tracking-widest text-teal-700 mb-3">What "Undetectable" Means For You</p>
-                    <ul class="space-y-2 text-sm text-slate-600">
-                        <li class="flex items-start gap-3"><i class="fas fa-shield-alt text-teal-500 mt-1 flex-shrink-0"></i> Your viral load drops below 20–50 copies/mL — below lab detection</li>
-                        <li class="flex items-start gap-3"><i class="fas fa-heart text-teal-500 mt-1 flex-shrink-0"></i> Your immune system (CD4 count) begins to rebuild to normal range (500–1500)</li>
-                        <li class="flex items-start gap-3"><i class="fas fa-users text-teal-500 mt-1 flex-shrink-0"></i> You cannot sexually transmit HIV to a partner — scientifically proven</li>
-                        <li class="flex items-start gap-3"><i class="fas fa-calendar-check text-teal-500 mt-1 flex-shrink-0"></i> Most patients reach undetectable within 3–6 months of starting ART</li>
-                    </ul>
-                </div>
+        <div class="grid md:grid-cols-12 gap-10 md:gap-16 mb-24 md:mb-40 relative">
+    <div class="absolute -left-20 -top-10 serif-ghost hidden lg:block select-none">01</div>
+    
+    <div class="md:col-span-5 h-fit">
+        <span class="section-tag mb-2 block">Foundational Science</span>
+        <h2 class="text-2xl md:text-3xl font-bold text-slate-900 mb-6 uppercase tracking-tighter">What is HIV, Really?</h2>
+        <div class="space-y-4 text-xs md:text-sm font-bold uppercase tracking-wide">
+            <p class="flex items-center text-teal-700"><i class="fas fa-check-circle mr-3"></i> Targeted Suppression</p>
+            <p class="flex items-center text-teal-700"><i class="fas fa-check-circle mr-3"></i> CD4 Fortress Rebuilding</p>
+            <p class="flex items-center text-teal-700"><i class="fas fa-check-circle mr-3"></i> Total Organ Protection</p>
+        </div>
+    </div>
+
+    <div class="md:col-span-7 clinical-border">
+        <p class="text-lg md:text-xl text-slate-800 leading-relaxed mb-8 italic font-serif">
+            "Without medication, HIV converts your own cells into viral factories. ART acts as a high-precision biological lock, halting this process and allowing your immune soldiers to rebuild."
+        </p>
+        <p class="text-slate-500 mb-6 text-sm md:text-base">
+            Dr. Manair utilizes the latest combination therapies to ensure the virus is suppressed to <strong>Undetectable</strong> levels. Once achieved, the risk of sexual transmission is statistically zero (U=U).
+        </p>
+        <div class="bg-teal-50 border border-teal-100 rounded-xl p-5 md:p-6">
+            <p class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-teal-700 mb-3">What "Undetectable" Means For You</p>
+            <ul class="space-y-3 text-xs md:text-sm text-slate-600">
+                <li class="flex items-start gap-3"><i class="fas fa-shield-alt text-teal-500 mt-1 flex-shrink-0"></i> Your viral load drops below 20–50 copies/mL — below lab detection</li>
+                <li class="flex items-start gap-3"><i class="fas fa-heart text-teal-500 mt-1 flex-shrink-0"></i> Your immune system (CD4 count) begins to rebuild to normal range (500–1500)</li>
+                <li class="flex items-start gap-3"><i class="fas fa-users text-teal-500 mt-1 flex-shrink-0"></i> You cannot sexually transmit HIV to a partner — scientifically proven</li>
+                <li class="flex items-start gap-3"><i class="fas fa-calendar-check text-teal-500 mt-1 flex-shrink-0"></i> Most patients reach undetectable within 3–6 months of starting ART</li>
+            </ul>
+        </div>
+    </div>
+</div>
+            
+        <section class="py-16 border-t border-slate-100 bg-teal-50/30">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <div class="mb-6 inline-flex items-center justify-center w-16 h-16 rounded-full bg-white shadow-sm text-teal-600">
+            <i class="fas fa-heart text-2xl"></i>
+        </div>
+        <h2 class="text-2xl font-bold text-slate-900 mb-4 uppercase tracking-tighter">You Don’t Have to Carry This Alone.</h2>
+        <p class="text-slate-600 text-sm md:text-base leading-relaxed max-w-2xl mx-auto mb-8">
+            While this information is here to help you understand the path forward, 
+            <span class="font-bold text-slate-900">nothing replaces a real conversation with a trusted doctor.</span> 
+            Think of this as a guide, but remember that medicine is personal. 
+        </p>
+        <div class="bg-white border border-teal-100 rounded-2xl p-6 md:p-8 shadow-sm max-w-xl mx-auto">
+            <p class="text-sm italic text-slate-700 mb-6">
+                "Coming to the clinic isn't just about medicine—it's about finding a community that understands. Whether it's with us or another professional you trust, please take that next step. You deserve a future without fear."
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+                <a href="#contact" class="bg-teal-600 text-white px-8 py-3 rounded-full font-bold uppercase text-[10px] tracking-widest hover:bg-teal-700 transition shadow-md">
+                    Let's Talk Privately
+                </a>
+                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">We are here for you</span>
             </div>
         </div>
+        <p class="mt-8 text-[10px] text-slate-400 uppercase tracking-widest">
+            Always seek the advice of a qualified health provider with any questions regarding a medical condition.
+        </p>
+    </div>
+</section>
 
         <!-- STAGES SECTION -->
         <section class="mb-40">
             <h2 class="section-tag text-center mb-4">Clinical Progression & Physical Manifestations</h2>
-            <p class="text-center text-slate-500 text-sm mb-20 max-w-2xl mx-auto">Understanding what is happening in your body — and why — is the first step to reclaiming control. Expand each section to read the full clinical picture.</p>
+            <p class="text-center text-slate-500 text-sm mb-20 max-w-2xl mx-auto">Understanding what is happening in your body — and why — is the first step to reclaiming control. Click each section to read the full clinical picture.</p>
             
             <div class="space-y-20">
 
@@ -157,32 +249,35 @@
                             <p class="text-slate-600">Deep muscle aches and joint pain that feels like "rusty grinding." At night, <strong>drenching sweats</strong> may soak through clothing completely. A flat, non-itchy reddish rash may appear on the chest, back, face, or palms — this is called the <em>HIV exanthem</em> and typically lasts 5–8 days.</p>
                         </div>
 
-                        <!-- EXPANDED: Pain Points & Patient Questions -->
-                        <div class="accordion-toggle open" onclick="toggleAccordion(this)">
-                            <div class="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 cursor-pointer hover:bg-slate-100 transition">
-                                <p class="text-sm font-bold uppercase tracking-widest text-slate-700">What Patients Ask Most About This Stage</p>
-                                <i class="fas fa-plus text-teal-600 icon text-sm"></i>
+                        <!-- ACCORDION TRIGGER -->
+                        <div class="accordion-trigger" onclick="toggleAccordion(this)">
+                            <div class="trigger-bar flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 hover:bg-slate-100 transition">
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <p class="text-sm font-bold uppercase tracking-widest text-slate-700">What Patients Ask Most About This Stage</p>
+                                    <span class="expand-badge"><i class="fas fa-chevron-down text-[8px]"></i> Click to expand</span>
+                                </div>
+                                <i class="fas fa-plus text-teal-600 icon-plus text-sm ml-3 flex-shrink-0"></i>
                             </div>
                         </div>
-                        <div class="accordion-content open space-y-4 px-1">
+                        <div class="accordion-content space-y-4 px-1">
                             <div class="pain-card">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "Is this just a flu or something worse?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "Is this just a flu or something worse?"</p>
                                 <p class="text-sm text-slate-600">AHI (Acute HIV Infection) mimics influenza almost exactly. The key distinguishing signs are: the rash appearing simultaneously with fever, ulcers inside the mouth or genitals, and swollen lymph nodes in multiple locations at once. A standard flu test will not detect HIV — you need a specific antigen/antibody (Ag/Ab) combination test.</p>
                             </div>
                             <div class="pain-card">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "I had unprotected sex — how soon can I test?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "I had unprotected sex — how soon can I test?"</p>
                                 <p class="text-sm text-slate-600">The <strong>window period</strong> varies by test type. 4th-generation Ag/Ab tests (the current standard) can detect HIV as early as <strong>18–45 days</strong> post-exposure. RNA/PCR tests detect even earlier (10–33 days). A negative result during the window period does not rule out infection — a confirmatory test at 45 days is recommended.</p>
                             </div>
                             <div class="pain-card">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "What is PEP and have I missed the window?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "What is PEP and have I missed the window?"</p>
                                 <p class="text-sm text-slate-600"><strong>PEP (Post-Exposure Prophylaxis)</strong> is emergency medication that can prevent HIV if started within <strong>72 hours</strong> of a high-risk exposure. It is a 28-day course of ART taken immediately. The sooner you start, the more effective it is. If you are reading this within 72 hours of exposure, contact Dr. Manair immediately — do not wait.</p>
                             </div>
                             <div class="pain-card">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "Am I contagious right now?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "Am I contagious right now?"</p>
                                 <p class="text-sm text-slate-600">Yes — the acute phase carries the <strong>highest viral load</strong> of any stage (sometimes millions of copies/mL), which means transmission risk is extremely high during this window. This is clinically important: many new transmissions occur during AHI precisely because people feel temporarily "recovered" and don't yet know their status. Testing now protects you and everyone you care about.</p>
                             </div>
                             <div class="pain-card">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "What should I do right now if I have these symptoms?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "What should I do right now if I have these symptoms?"</p>
                                 <div class="mt-3 space-y-2">
                                     <div class="flex items-start gap-3 text-sm text-slate-600">
                                         <div class="timeline-dot bg-red-400 mt-1"></div>
@@ -233,19 +328,22 @@
                             <p><strong>Dermatological Warning:</strong> Recurring shingles (even in young people), severe fungal infections on nails or skin, or persistent seborrheic dermatitis on the face and scalp.</p>
                         </div>
 
-                        <div class="accordion-toggle open" onclick="toggleAccordion(this)">
-                            <div class="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 cursor-pointer hover:bg-slate-100 transition">
-                                <p class="text-sm font-bold uppercase tracking-widest text-slate-700">What Patients Ask Most About This Stage</p>
-                                <i class="fas fa-plus text-teal-600 icon text-sm"></i>
+                        <div class="accordion-trigger" onclick="toggleAccordion(this)">
+                            <div class="trigger-bar flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-5 py-4 hover:bg-slate-100 transition">
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <p class="text-sm font-bold uppercase tracking-widest text-slate-700">What Patients Ask Most About This Stage</p>
+                                    <span class="expand-badge"><i class="fas fa-chevron-down text-[8px]"></i> Click to expand</span>
+                                </div>
+                                <i class="fas fa-plus text-teal-600 icon-plus text-sm ml-3 flex-shrink-0"></i>
                             </div>
                         </div>
-                        <div class="accordion-content open space-y-4 px-1">
+                        <div class="accordion-content space-y-4 px-1">
                             <div class="pain-card pain-card-amber">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "I feel totally fine. Do I really need medication?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "I feel totally fine. Do I really need medication?"</p>
                                 <p class="text-sm text-slate-600">This is the most dangerous misconception. During latency, the virus is <strong>not dormant</strong> — it is actively replicating at lower levels and destroying CD4 cells every day. Even in the absence of symptoms, your CD4 count drops by an average of 50–100 cells/mm³ per year. Untreated latency quietly sets the stage for organ damage that can take years to reverse. <strong>Starting ART now protects your heart, kidneys, brain, and liver</strong> from long-term inflammatory damage.</p>
                             </div>
                             <div class="pain-card pain-card-amber">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "My CD4 is 450. Is that safe? What do these numbers mean?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "My CD4 is 450. Is that safe? What do these numbers mean?"</p>
                                 <p class="text-sm text-slate-600">A normal CD4 count is <strong>500–1,500 cells/mm³</strong>. At 450, you are near the lower threshold and your immune system is already working harder than it should. Here is what the numbers mean for your body:</p>
                                 <div class="mt-3 space-y-2">
                                     <div class="flex items-start gap-3 text-sm text-slate-600">
@@ -263,15 +361,15 @@
                                 </div>
                             </div>
                             <div class="pain-card pain-card-amber">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "I have swollen glands for months. Is this HIV?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "I have swollen glands for months. Is this HIV?"</p>
                                 <p class="text-sm text-slate-600">Persistent swollen lymph nodes (PGL) lasting more than 3 months in 2 or more non-groin locations is a recognized clinical marker of HIV latency. However, swollen glands also occur with many other infections. The only way to confirm is testing. Other latency-phase clues include: <strong>recurrent oral thrush</strong> (white coating on tongue), <strong>unexplained weight loss of 5–10%</strong>, and repeated bacterial chest infections.</p>
                             </div>
                             <div class="pain-card pain-card-amber">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "Can I still have sex? Can I have children?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "Can I still have sex? Can I have children?"</p>
                                 <p class="text-sm text-slate-600">On effective ART with an undetectable viral load, you can have sex without transmitting HIV (U=U — proven in the PARTNER2 study with 0 transmissions across 77,000 condom-less sex acts). Regarding children: <strong>HIV-positive parents can have HIV-negative children</strong> through a managed pregnancy protocol. Women on ART with undetectable viral load have a transmission risk to the baby of less than 1%. This is a conversation Dr. Manair supports with full clinical planning.</p>
                             </div>
                             <div class="pain-card pain-card-amber">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "What monitoring do I need during this stage?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "What monitoring do I need during this stage?"</p>
                                 <div class="mt-3 grid md:grid-cols-2 gap-4 text-sm text-slate-600">
                                     <div>
                                         <p class="font-bold text-slate-800 mb-1">Every 3–6 Months</p>
@@ -324,19 +422,22 @@
                         <h4 class="font-bold text-slate-900 text-lg uppercase tracking-tighter">Systemic Collapse — and the Path Back</h4>
                         <p class="text-slate-600 leading-relaxed">Extreme weight loss and <strong>profound fatigue</strong> where basic movement feels impossible. Opportunistic infections — infections that a healthy immune system would easily fight — begin to take hold. Even at this stage, <strong class="text-teal-700">recovery is still possible</strong> through specialized Immune Reconstitution Therapy.</p>
 
-                        <div class="accordion-toggle open" onclick="toggleAccordion(this)">
-                            <div class="flex items-center justify-between bg-red-50 border border-red-200 rounded-xl px-5 py-4 cursor-pointer hover:bg-red-100 transition">
-                                <p class="text-sm font-bold uppercase tracking-widest text-red-700">What Patients Ask Most About This Stage</p>
-                                <i class="fas fa-plus text-red-500 icon text-sm"></i>
+                        <div class="accordion-trigger" onclick="toggleAccordion(this)">
+                            <div class="trigger-bar flex items-center justify-between bg-red-50 border border-red-200 rounded-xl px-5 py-4 hover:bg-red-100 transition">
+                                <div class="flex items-center flex-wrap gap-2">
+                                    <p class="text-sm font-bold uppercase tracking-widest text-red-700">What Patients Ask Most About This Stage</p>
+                                    <span class="expand-badge expand-badge-red"><i class="fas fa-chevron-down text-[8px]"></i> Click to expand</span>
+                                </div>
+                                <i class="fas fa-plus text-red-500 icon-plus text-sm ml-3 flex-shrink-0"></i>
                             </div>
                         </div>
-                        <div class="accordion-content open space-y-4 px-1">
+                        <div class="accordion-content space-y-4 px-1">
                             <div class="pain-card pain-card-red">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "Is it too late? Have I done irreversible damage?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "Is it too late? Have I done irreversible damage?"</p>
                                 <p class="text-sm text-slate-600">This is the question Dr. Manair hears most. The honest clinical answer: <strong>it is almost never too late</strong>. ART works even when the CD4 count is very low — sometimes below 10. The immune system has a remarkable capacity to rebuild. Studies show that patients starting ART with a CD4 of under 50 can rebuild to 500+ within 2–3 years of sustained treatment. The damage done to organs depends on duration and the specific opportunistic infections involved — but much of it is reversible or manageable.</p>
                             </div>
                             <div class="pain-card pain-card-red">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "What are these opportunistic infections and how are they treated?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "What are these opportunistic infections and how are they treated?"</p>
                                 <div class="mt-3 space-y-3 text-sm text-slate-600">
                                     <div class="border-b border-slate-200 pb-3">
                                         <p class="font-bold text-slate-800">PCP Pneumonia (Pneumocystis jirovecii)</p>
@@ -361,11 +462,11 @@
                                 </div>
                             </div>
                             <div class="pain-card pain-card-red">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "What is IRIS and why do I feel worse after starting ART?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "What is IRIS and why do I feel worse after starting ART?"</p>
                                 <p class="text-sm text-slate-600"><strong>IRIS (Immune Reconstitution Inflammatory Syndrome)</strong> affects some patients in the first weeks of starting ART. As your immune system "wakes up," it can temporarily over-react to infections already in your body — causing fever, swelling, or worsening symptoms. This can be alarming, but it is actually a sign that ART is working. Dr. Manair monitors for IRIS closely and manages it with anti-inflammatory medications. IRIS typically resolves within weeks and does not mean the treatment has failed.</p>
                             </div>
                             <div class="pain-card pain-card-red">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "How long will it take to recover my immune system?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "How long will it take to recover my immune system?"</p>
                                 <div class="mt-3 space-y-2">
                                     <div class="flex items-start gap-3 text-sm text-slate-600">
                                         <div class="timeline-dot bg-red-400 mt-1"></div>
@@ -386,7 +487,7 @@
                                 </div>
                             </div>
                             <div class="pain-card pain-card-red">
-                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1">Pain Point: "I'm scared to go to the hospital. Can I be treated privately?"</p>
+                                <p class="text-xs font-bold uppercase tracking-widest text-slate-500 mb-1"> "I'm scared to go to the hospital. Can I be treated privately?"</p>
                                 <p class="text-sm text-slate-600">Yes — entirely. Dr. Manair's protocol is designed for patients who need complete discretion. All ART, OI medications, and monitoring labs are coordinated through private channels. No hospital stay is required for most cases. Medications are dispensed through unlabeled home delivery. Video consultations replace in-person visits when safety is a concern. <strong>Your privacy is the clinical protocol, not an afterthought.</strong></p>
                             </div>
                             <div class="bg-slate-900 rounded-xl p-6 text-white">
@@ -399,7 +500,7 @@
             </div>
         </section>
 
-        <!-- SIDE EFFECTS SECTION (new) -->
+        <!-- SIDE EFFECTS SECTION -->
         <section class="py-20 border-t border-slate-100 mb-20">
             <div class="max-w-4xl mx-auto">
                 <span class="section-tag block mb-4 text-center">Patient Concerns: ART Side Effects</span>
@@ -487,12 +588,24 @@
             if (e.key === "Escape") { window.location.href = "https://www.google.com"; }
         });
 
-        // Accordion toggle
+        // Accordion toggle — all start CLOSED
         function toggleAccordion(trigger) {
             const content = trigger.nextElementSibling;
             const isOpen = content.classList.contains('open');
+
+            // Toggle open/closed
             content.classList.toggle('open', !isOpen);
             trigger.classList.toggle('open', !isOpen);
+
+            // Update badge text
+            const badge = trigger.querySelector('.expand-badge');
+            if (badge) {
+                if (!isOpen) {
+                    badge.innerHTML = '<i class="fas fa-chevron-up text-[8px]"></i> Click to close';
+                } else {
+                    badge.innerHTML = '<i class="fas fa-chevron-down text-[8px]"></i> Click to expand';
+                }
+            }
         }
     </script>
 </body>
